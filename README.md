@@ -1,3 +1,36 @@
+Content:
+Implement the preSelect and bigDataSelect methods of the SelectEngine, and answer multiple bigDataSelect queries.
+
+Data Description:
+CSV format data files, multiple files exist (all filenames start with "datafile", each file is about 600M), the first line is the column name, all 3 columns are BIGINT and only positive numbers, no duplication in a single column, the total data volume is 5 billion rows (excluding the column header), the data files in the project are for testing only.
+
+C1,C2,C3
+
+138921890321889210,3218380219098057887,9889656755676878998
+
+7678980801232132132,123213213213128998,6778643260889020021
+
+Task Description:
+The contestants design the preSelect(String dataFileDir) data preprocessing and bigDataSelect(String columnName,int k) returns the entire row of data where the specified column name is ranked K in ascending order. For example, based on the above data:
+
+bigDataSelect("C1",1) needs to return "138921890321889210,3218380219098057887,9889656755676878998"
+
+bigDataSelect("C2",1) needs to return "7678980801232132132,123213213213128998,6778643260889020021"
+
+Rules:
+Development language is Java, only JDK 8 standard library can be used, JVM parameter -Xmx4096m
+Hard coding of results is not allowed;
+Do not modify the pom and SelectDriver files;
+If new files need to be generated during the program run, write them uniformly into /user/syjnh/target, this directory will be automatically cleared before the program starts;
+The evaluation process will first execute preSelect once, and then execute bigDataSelect query 60 times in a single thread;
+Ranking is based on time consumption under the premise of correct results, (time includes data preloading time and data query time, contestants design data preloading method themselves), in addition, a second judgment will be made on the winning contestant's code, the second judgment does not affect the unified evaluation results, it only verifies whether the correct results can be run under different data sets.
+Process:
+The organizing committee provides a code execution platform, the platform hardware is 4-core 8G 300G hard disk, contestants log in to register and submit code addresses for competition, to ensure fairness, only one piece of code is executed on the code execution platform at the same time, multiple submissions need to wait in line, waiting time does not affect the results.
+The deadline for code submission and execution is 24:00 on September 6, 2022, after the deadline, the system will start to evaluate the code submitted by the contestants, so contestants are required not to modify the code after the deadline, submissions after the deadline will be deemed invalid.
+Execution time exceeding 30 minutes will be considered overtime and will be terminated by the system without a score, and the winning code will be announced in the end.
+
+
+
 # 海量数据查询
 ### 内容：
 
